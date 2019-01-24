@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Lecture</title>
+</head>
+<body>
+
+<!--
+    Form Types
+    Syntax
+    Method attribute (the HTTP verb used to transmit the data)
+    Action attribute (where the form data is submitted)
+    Query Strings (key-value pairs appended to the URL when making a GET request)
+    Submitting forms
+    Input types
+    Labels
+    Attributes (name and value)
+-->
+
+<h1>HTML Forms</h1>
+
+<hr>
+
+<h2>Standard Form</h2>
+
+<form method="" action="">
+    <label for="">Username</label>
+    <input id="" name="" type="">
+    <br>
+    <label for="">Password</label>
+    <input id="" name="" type="">
+    <br>
+    <input type="submit">
+</form>
+
+
+<!--<h2>Method and Action Attributes</h2>-->
+
+<!-- METHOD ATTRIBUTE -->
+
+<!--
+
+HTML5 supported HTTP Methods:
+    1) GET
+    2) POST
+
+HTML only allows GET and POST methods because the specifications have not been finalized yet
+
+GET 										-VS- 		POST
+Less secure 								---- 		"More" secure
+Cachable and bookmarkable 					---- 		Not cachable or bookmarkable
+A request for information from a server		---- 		A request to submit information to a server
+Use when searching or linking				---- 		Use for submitting data to be stored
+
+For additional information: "https://www.w3schools.com/tags/ref_httpmethods.asp"
+
+-->
+
+<!--
+
+    Making GET requests to Google...
+    links, urls, HTML forms
+
+-->
+
+<a href="https://google.com">Hello Bob</a>
+
+<form method="GET" action="https://google.com">
+    <button>Submit</button>
+</form>
+
+GET METHOD with inputs
+
+
+<a href="https://duckduckgo.com/?q=cats&ia=news" target="_blank">Cats!!</a>
+
+<form method="GET" action="https://request-inspector.glitch.me/" target="_blank">
+    <label for="q">Duck Search</label>
+    <input id="q" type="text" name="q" placeholder="enter search term">
+    <input type="text" name="pet" placeholder="enter pet type">
+    <button>Submit</button>
+</form>
+
+<!--Query String Format-->
+
+<!--
+
+?key1=value&key2=value&key3=value
+
+?term=silly+cats&resultsPerPage=20
+
+
+-->
+
+
+
+<!-- POST METHOD with inputs -->
+<form method="POST" action="https://request-inspector.glitch.me/" target="_blank">
+    <label for="search">Duck Search</label>
+    <input id="search" type="text" name="q" placeholder="enter search term">
+    <input type="text" name="pet" placeholder="enter pet type">
+    <button>Submit</button>
+</form>
+
+
+
+
+<!-- NO METHOD ATTRIBUTE -->
+
+
+<!-- ACTION ATTRIBUTE -->
+<!-- none -->
+
+
+<!-- POST Search  -->
+<h4>POST Search</h4>
+<form method="POST" action="https://duckduckgo.com">
+    <input type="hidden" name="q" value="Codeup">
+    <button>POST DuckDuck</button>
+</form>
+
+<!-- POST Search to Google  -->
+<h4>POST Search to Google</h4>
+<form method="POST" action="https://google.com">
+    <input type="hidden" name="q" value="Codeup">
+    <button>POST Google</button>
+</form>
+
+
+<!-- QUERY STRINGS -->
+
+<!--
+    Three ways to make GET requests:
+        1) URL search
+        2) Clicking a link
+        3) Submitting a form
+-->
+
+<!--<h3>Three Ways to Make a GET Request</h3>-->
+
+<ol>
+    <li>Type address in address bar</li>
+    <li>
+        <a href="https://duckduckgo.com?q=codeup">Click a Link</a>
+    </li>
+    <li>
+        <form method="GET" action="https://duckduckgo.com">
+            <input type="hidden" name="q" value="Codeup">
+            <button>Submit a Form</button>
+        </form>
+    </li>
+</ol>
+
+
+<h2>Input Types and Attributes</h2>
+
+<!-- INPUT TYPES AND ATTRIBUTES -->
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <!-- Text -->
+    <h4>Text Input</h4>
+    <input type="text" name="movie" placeholder="Enter favorite movie">
+
+    <!-- Email -->
+    <h4>Email Input</h4>
+    <input type="email" name="email" placeholder="Enter email address">
+
+    <!-- Password -->
+    <h4>Password Input</h4>
+    <input type="password" name="password" placeholder="Enter password">
+
+    <!-- Text area -->
+    <h4>Textarea Input</h4>
+    <textarea name="post" rows="4" cols="50" placeholder="Write blog post"></textarea>
+
+    <!-- Checkboxes -->
+    <h4>Checkbox Input</h4>
+    <input name="newsletter_signup" value="asdf" type="checkbox" checked>Sign Up For The Email Newsletter
+
+    <!-- Multiple Checkboxes -->
+    <h4>Multiple Checkboxes</h4>
+    <fieldset>
+        <legend>Choose Toppings</legend>
+        <label for="topping1">
+            <input id="topping1" name="topping1" value="pepperoni" type="checkbox">Pepperoni
+        </label>
+        <input name="topping1" value="peppers" type="checkbox">Peppers
+        <input name="topping2" value="mushrooms" type="checkbox">Mushrooms
+        <input name="topping2" value="olives" type="checkbox">Olives
+    </fieldset>
+
+    <!-- Radio Buttons -->
+    <h4>Radio Input</h4>
+    <fieldset>
+        <legend>Question 1</legend>
+        <h4>What is the right choice?</h4>
+        A <input type="radio" name="quiz_question_1" value="a"><br>
+        B <input type="radio" name="quiz_question_1" value="b"><br>
+        C <input type="radio" name="quiz_question_1" value="c"><br>
+        D <input type="radio" name="quiz_question_1" value="d"><br>
+    </fieldset>
+
+    <!-- Selects (with or without multiple option) -->
+    <h4>Select Inputs</h4>
+    <select name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="dark">Dark Roast</option>
+        <option value="espresso">Espresso Blend</option>
+    </select>
+
+    <!-- Hidden Inputs -->
+    <h4>Hidden Inputs</h4>
+    <input type="hidden" name="user_id" value="432">
+
+    <!-- Labels -->
+    <label for="firstName">First Name</label>
+    <input id="firstName" name="firstName" type="text">
+
+    <!-- Disabled -->
+    <label for="lastName">Last Name</label>
+    <input id="lastName" name="lastName" type="text" disabled>
+
+    <!-- Required -->
+    <label for="nickname">Nick Name</label>
+    <input id="nickname" type="text"  placeholder="Please enter your nickname" name="nickname" required>
+
+    <!-- Submit Button -->
+    <div>
+        <button>Submit</button>
+    </div>
+
+</form>
+
+</body>
+</html>
