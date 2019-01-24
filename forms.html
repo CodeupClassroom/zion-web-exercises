@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Veridian Dynamics: Register</title>
+</head>
+<body>
+
+    <header>
+        <h1>Register With Us</h1>
+    </header>
+
+    <main>
+
+        <form method="POST" action="https://request-inspector.glitch.me/">
+
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="Please enter email">
+            </div>
+
+            <div>
+                <label for="password">Password</label>
+                <input id="password" type="password" name="password" placeholder="Please enter password">
+            </div>
+
+            <div>
+                <label for="bio">Bio</label>
+                <div>
+                    <textarea id="bio" name="bio" id="bio" cols="30" rows="10" placeholder="Please enter bio"></textarea>
+                </div>
+            </div>
+
+            <fieldset>
+                <legend>How did you hear about us?</legend>
+                <label for="billboard">
+                    <input id="billboard" type="radio" name="marketing" value="billboard"> billboard
+                </label>
+                <br>
+                <label for="radio-ad">
+                    <input id="radio-ad" type="radio" name="marketing" value="radio_ad"> radio advertisement
+                </label>
+                <br>
+                <label for="internet-ad">
+                    <input id="internet-ad" type="radio" name="marketing" value="internet_ad"> internet advertisement
+                </label>
+                <br>
+                <label for="other">
+                    <input id="other" type="radio" name="marketing" value="other"> other
+                </label>
+                <br>
+            </fieldset>
+
+            <label for="browser">Browser Selection</label>
+
+            <select name="browser" id="browser">
+                <option value="chrome">Chrome</option>
+                <option value="safari">Safari</option>
+                <option value="firefox">Firefox</option>
+            </select>
+
+            <div>
+                <button>Submit</button>
+            </div>
+
+        </form>
+
+    </main>
+
+
+</body>
+</html>
