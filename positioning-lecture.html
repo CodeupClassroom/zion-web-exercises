@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Positioning Lecture</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+
+    /*
+
+    FLOATING - taking the element out of the normal document flow to allow text wrapping
+
+        === Box 1 and Paragraph Only
+
+        - no floats
+        - float box 1 left
+        - float box 1 right
+        - float paragraph left
+        - float paragraph right
+        - float box 1 left, float paragraph left
+
+        === Box 1 and Box 2 and Paragraph
+
+        - no floats
+        - box 1 float left
+        - box 2 float left
+        - both boxes float left
+        - box 1 float left, box 2 float right
+        - box 1 float left, box 2 float right, paragraph clear left
+        - box 1 float right, box 2 float left, paragraph clear right
+        - box 1 float right, box 2 float left, paragraph clear both
+
+        === Clearfix or overflow: auto (Box1, Box3, Paragraph)
+        https://www.w3schools.com/howto/howto_css_clearfix.asp
+
+        !! floats will collapse width to hold text if no explicit width !!
+        !! if floated elements have non-floated parent elements, the parent will collapse !!
+
+        - remove height and width to box1 and float box3 left
+
+        === Navbar
+
+        1) remove list style from "nav li"
+        2) remove list padding and margin from "nav ul"
+        3) float li elements left for "nav li"
+        4) apply clearfix solution to fix collapsed nav by adding clearfix class in css and html
+        5) give display block, background color, padding, margin to "nav a"
+
+
+    POSITIONING
+
+        1) Static - default
+        2) Relative - can move elements up and down visually, still in document flow
+        3) Absolute - taken out of document flow and relative to its relative parent
+        4) Fixed - taken out of the document flow
+
+    */
+
+        body {
+            background-color: black;
+            margin: 0;
+        }
+
+        nav {
+            width: 100%;
+            background: purple;
+        }
+
+        nav,
+        nav li a {
+            color: white;
+        }
+
+        p {
+
+        }
+
+        span {
+            color: white;
+            font-size: 2em;
+            font-family: sans-serif;
+        }
+        .container {
+            background-color: white;
+            min-height: 2000px;
+            width: 600px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .box1 {
+            height: 100px;
+            width: 100px;
+            padding: 10px;
+            background: green;
+        }
+        .box2 {
+            height: 200px;
+            width: 200px;
+            padding: 10px;
+            background: blue;
+        }
+        .box3 {
+            height: 100px;
+            width: 100px;
+            background: red;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Brand</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="box1">
+            <span>Box 1</span>
+            <!--<div class="box3"></div>-->
+        </div>
+        <!--<div class="box2"><span>Box 2</span></div>-->
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid iure quaerat? Accusamus adipisci aliquam atque consectetur deserunt est exercitationem expedita fugit hic id inventore iste itaque natus nemo nulla, numquam possimus quas rerum sint, unde velit veniam vero vitae. A ad culpa distinctio dolorum eaque exercitationem facilis, ipsam placeat, provident quisquam reiciendis velit! Alias aliquid animi aspernatur at, blanditiis dignissimos doloremque, dolores ea eius eligendi esse expedita facere fugiat incidunt libero, magnam minima minus modi nemo odio officiis quam quasi quia quisquam quo quod rem repellat rerum sequi sint soluta tenetur vel veritatis vitae voluptas voluptate voluptatem. Cum, eaque.
+        </p>
+    </main>
+</body>
+</html>
