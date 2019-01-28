@@ -1,3 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 
+:root{
+    --bg-info: blue;
+    --text-info: blue;
+    --bg-success: green;
+    --text-success: green;
+    --bg-warning: yellow;
+    --text-warning: yellow;
+    --bg-error: red;
+    --text-error: red;
+}
+.info{
+    color: var(--text-info);
+    background-color: var(--bg-info);
+}
