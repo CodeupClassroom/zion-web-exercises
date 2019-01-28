@@ -24,7 +24,7 @@ fieldset {
     /* There must be 1em between the content and the border of this element */
     padding: 1em;
     /* It should have no border */
-    border: none;
+    border: 0px;
     /* Its background should be white */
     background-color: #fff;
 }
@@ -32,15 +32,16 @@ fieldset {
 .width-80 {
     /* The element with this class should 80% of the width and it must be centered */
     width: 80%;
-    margin: 0 auto;
+    margin: auto;
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
+
 }
 
 .form-group {
     /* This element must use 100% of the width */
-    width: 100%
-    margin: .5em 0em;
+    width: 100%;
     /* It should have a separation of .5em from elements on top of it and below it*/
+    margin: .5em 0em;
 }
 
 .form-label {
@@ -54,10 +55,10 @@ fieldset {
     /* It should have a separation of .5em from elements on top of it and below it */
     margin: .5em 0em;
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
-    width: calc(100% - 4px);
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Calculate based on the padding of the `.btn` class */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
+    width: calc(100% - 4px);
 }
 
 .btn {
@@ -67,9 +68,8 @@ fieldset {
     color: #fff;
     font-weight: bold;
     /* The border of this element should be 1px, and its color should be light grey */
-    border: 1px solid lightgray;
+    border: 1px solid lightgrey;
     background-color: #0fb784;
-    /*for buttons border-box is default*/
 }
 
 .btn-block {
