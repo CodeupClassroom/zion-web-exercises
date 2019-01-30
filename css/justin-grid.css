@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.row {
+    width: 100%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.large-column,
+.medium-column,
+.small-column {
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+}
+
+@media screen and (min-width: 500px) {
+    .small-column {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .small-column {
+        width: 25%;
+    }
+    .medium-column {
+        width: 50%;
+    }
+    .small-offset {
+        margin-left: 25%;
+    }
+}
