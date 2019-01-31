@@ -13,6 +13,7 @@ footer {
     margin-top: 4em;
 }
 
+
 .alert-info a,
 .nav-links a {
     display: inline-block;
@@ -22,8 +23,8 @@ footer {
     width: 100%;
 }
 
-
 .alert-info a {
+    line-height: 46px;
     text-decoration: none;
     background: #DEFEFE;
     color: black;
@@ -56,10 +57,6 @@ img {
     margin-top: 2em;
 }
 
-.sub-section h2 {
-    font-size: 1.3em;
-}
-
 
 @media screen and (min-width: 700px) {
 
@@ -67,24 +64,12 @@ img {
         float: left;
     }
 
-    section {
-        float: left;
-        margin-right: 3em;
-    }
-
     footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
 
-    .main {
-        width: calc(60% - 3em);
     }
 
     .sub-section {
-        width: calc(40% - 3em);
-        margin-top: .3em;
+        margin-top: 0;
     }
 
     .hidden-on-desktop {
@@ -99,7 +84,7 @@ img {
 
     .nav-links li {
         float:left;
-        margin-right: 1.5em;
+        margin-left: 1.5em;
     }
     .nav-links a {
         display: unset;
