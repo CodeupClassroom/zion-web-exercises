@@ -50,11 +50,9 @@
 </nav>
 
 <header class="container d-none d-md-block mt-3">
-
     <div class="jumbotron pizza-img px-0">
         <h1 class="text-center font-weight-normal">Welcome to Pizza World!</h1>
     </div>
-
 </header>
 
 <main class="container">
@@ -85,9 +83,9 @@
             </div>
         </nav>
 
-        <!-- FIRST TAB PANE -->
-
         <div class="tab-content" id="nav-tabContent">
+
+            <!-- FIRST TAB PANE -->
             <div class="tab-pane fade show active" id="nav-size" role="tabpanel" aria-labelledby="nav-size-tab">
 
                 <div class="card">
@@ -140,14 +138,15 @@
                             </ul>
                         </div> <!-- end of inner card -->
 
-
-                    </div>
+                    </div> <!-- end of outer card body -->
                     <div class="card-footer text-right">
                         <a class="btn btn-primary" href="">Next Step <i class="fas fa-angle-right"></i></a>
                     </div>
-                </div>
+                </div> <!-- end of outer card -->
 
-            </div>
+            </div> <!-- end of pane 1-->
+
+            <!-- SECOND TAB PANE -->
             <div class="tab-pane fade" id="nav-cheese" role="tabpanel" aria-labelledby="nav-cheese-tab">
 
                 <div class="card">
@@ -194,17 +193,19 @@
                             </div>
                         </div> <!-- end of inner card -->
 
+                    </div> <!-- end of outer card body -->
 
-                    </div>
                     <div class="card-footer text-right">
                         <div class="btn-group">
                             <a class="btn btn-primary" href=""><i class="fas fa-angle-left"></i> Previous Step</a>
                             <a class="btn btn-primary" href="">Next Step <i class="fas fa-angle-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> <!-- end of outer card -->
 
-            </div>
+            </div> <!-- end of pane 2 -->
+
+            <!-- THIRD TAB PANE -->
             <div class="tab-pane fade" id="nav-toppings" role="tabpanel" aria-labelledby="nav-toppings-tab">
 
                 <div class="card">
@@ -275,15 +276,16 @@
                             </ul>
                         </div> <!-- end of inner card -->
 
+                    </div> <!-- end of outer card body -->
 
-                    </div>
                     <div class="card-footer text-right">
                         <button class="btn btn-primary">Checkout <i class="fas fa-shopping-cart"></i></button>
                     </div>
-                </div>
 
-            </div>
-        </div>
+                </div> <!-- end of outer card -->
+
+            </div> <!-- end of pane 3 -->
+        </div> <!-- end of tab contents -->
     </form>
 
 </main>
