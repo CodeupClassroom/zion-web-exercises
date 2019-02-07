@@ -24,18 +24,18 @@ alert(userColor + " " + "is my favorite color too!!");
 
 // ...
 
-var rentalPerDayDollars = prompt("What is the rental rate per day in dollars??");
+    var rentalPerDayDollars = prompt("What is the rental rate per day in dollars??");
 
-var littleMermaidDays = prompt("How many days was the Little Mermaid rented for?");
-var brotherBearDays = prompt("How many days was Brother Bear rented for?");
-var herculesDays = prompt("How many days was Hercules rented for?");
+    var littleMermaidDays = prompt("How many days was the Little Mermaid rented for?");
+    var brotherBearDays = prompt("How many days was Brother Bear rented for?");
+    var herculesDays = prompt("How many days was Hercules rented for?");
 
 
-var totalRentalCost;
+    var totalRentalCost;
 
-totalRentalCost = (+littleMermaidDays + +brotherBearDays + +herculesDays) * rentalPerDayDollars;
+    totalRentalCost = (+littleMermaidDays + +brotherBearDays + +herculesDays) * rentalPerDayDollars;
 
-alert(totalRentalCost);
+    alert("The total rental cost is" + " " + "$" + totalRentalCost.toFixed(2));
 
 
 // Contractor
@@ -45,19 +45,21 @@ alert(totalRentalCost);
 
     // ...
 
-var googleHourlyRateDollars;
-var amazonHourlyRateDollars;
-var facebookHourlyRateDollars;
+    var googleHourlyRateDollars = prompt("What is the Google hourly rate in dollars?");
+    var amazonHourlyRateDollars = prompt("What is the Amazon hourly rate in dollars?");
+    var facebookHourlyRateDollars = prompt("What is the Facebook hourly rate in dollars?");
 
-var googleHours;
-var amazonHours;
-var facebookHours;
+    var googleHours = prompt("How many hours were worked at Google?");
+    var amazonHours = prompt("How many hours were worked at Amazon?");
+    var facebookHours = prompt("How many hours were worked at Facebook?");
 
-var totalPayment;
+    var totalPayment;
 
-totalPayment = googleHours * googleHourlyRateDollars;
-totalPayment += amazonHours * amazonHourlyRateDollars;
-totalPayment += facebookHours * facebookHourlyRateDollars;
+    totalPayment = googleHours * googleHourlyRateDollars;
+    totalPayment += amazonHours * amazonHourlyRateDollars;
+    totalPayment += facebookHours * facebookHourlyRateDollars;
+
+    alert("Total wages earned: $" + totalPayment.toFixed(2));
 
 
 // Student Enrollment
@@ -65,23 +67,25 @@ totalPayment += facebookHours * facebookHourlyRateDollars;
 //
 // ...
 
-var classIsFull; // boolean
-var classSchedulesCheck; // boolean
+    var classIsFull = confirm("Confirm that class is full"); // boolean
+    var classSchedulesCheck = confirm("Class schedules check out"); // boolean
 
-var studentEnrolled = !classFull && classSchedulesCheck;
+    var studentEnrolled = !classIsFull && classSchedulesCheck;
+
+    alert("Student enrollment status: " + studentEnrolled);
 
 
 // Product Offer
 // A product offer can be applied only if people buys more than 2 items, and the offer has not expired. Premium members do not need to buy a specific amount of products.
 //     Use the following code to follow the instructions below:
-//
-//     ...
 
-var numberOfItems; // number
-var offerIsValid; // boolean
-var isPremiumMember; // boolean
+    var numberOfItems = prompt("Enter number of items bought: "); // number
+    var offerIsValid = confirm("Offer is valid"); // boolean
+    var isPremiumMember = confirm("Is a premium member"); // boolean
 
-var productDiscountApplied = premiumMember || (numberOfItems > 2 && offerValid);
+    var productDiscountApplied = (isPremiumMember || Number(numberOfItems) > 2) && offerIsValid;
+
+    alert("Product discount status: " + productDiscountApplied);
 
 
 
