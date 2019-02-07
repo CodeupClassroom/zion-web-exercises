@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions Lecture</title>
+</head>
+<body>
+
+
+<script>
+
+    (function() {
+
+
+        "use strict";
+
+        // *** SEE NOTES ***
+
+        // function bark(someSound) {
+        //     return "The dog says: " + someSound;
+        // }
+
+        // ===== CALLING A FUNCTION
+
+            //     the difference between including the () or not
+            //     how to pass arguments to a function
+            //         pass correct amount
+            //         pass none when defined
+            //         pass more
+
+        // console.log("Test");
+
+        // console.log(bark("hello"));
+        // console.log(bark());
+        // console.log(bark("howdy", 3, true, "bob", {}, [], undefined));
+
+
+
+
+
+
+        // ===== ASSIGNING VALUE VS. DEFINITION
+
+        // var dogSound = bark("WOOF!");
+        //
+        // console.log(dogSound);
+
+        // var makeDogSound = bark();
+        // console.log(makeDogSound);
+        //
+        // console.log(makeDogSound("arrrr!!"));
+
+
+
+
+
+
+        /* ===== FUNCTION DECLARATION
+
+            function doSomething(OPTIONAL_PARAMETERS) {
+                // doing something...
+                return SOME_VALUE;
+            }
+
+        */
+
+        // function returnInputAsOutput(x) {
+        //     return x;
+        // }
+        //
+        // console.log(returnInputAsOutput(8));
+
+        //
+        // function add(a, b) {
+        //     return a + b;
+        // }
+        //
+        // console.log(add(3, 4));
+
+
+
+
+        /* ===== FUNCTION EXPRESSION
+
+            var someVariable = function(OPTIONAL_PARAMETERS) {
+                // do something
+                return SOME_VALUE;
+            };
+
+        */
+
+        // function sayHello(greeting) {
+        //     return greeting;
+        // }
+
+        // var sayHello = function(greeting) {
+        //     return greeting;
+        // };
+
+        // console.log(sayHello("Well howdy, Zion!!!"));
+        // console.log(sayHello("Hello, Codeup!"));
+        // console.log(sayHello("Hello, World!"));
+
+
+        // ===== MINI PROBLEMS
+
+            // Write a function, returnFive, that returns the number five. No inputs should be defined.
+
+            // function returnFive() {
+            //     return 5;
+            // }
+            //
+            // console.log(returnFive());
+
+
+            // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is the number 5 or the string "5". Return false otherwise.
+
+            // function isFive(num) {
+            //     return num == 5;
+            // }
+
+            // console.log(isFive(5)); // true
+            // console.log(isFive("5")); // true
+            // console.log(isFive("asdfasdf")); // false
+            // console.log(isFive(3)) // false
+
+
+
+
+            // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
+
+            // function isShortWord(string) {
+            //     return string.length < 5;
+            // }
+            //
+            // console.log(isShortWord("asdfasdfasdfasdf")); // false
+            // console.log(isShortWord("cat")); // true
+
+            // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the passed arguments are the same length. Return false otherwise.
+
+            // var str1 = prompt("Enter a string");
+            // var str2 = prompt("Enter another string");
+            // function isSameLength(str1, str2) {
+            //     return str1.length === str2.length;
+            // }
+            //
+            // console.log(isSameLength(str1, str2));
+
+            // console.log(isSameLength("bob", "cat")); // true
+            // console.log(isSameLength("bob", "catasdf")); // false
+
+
+            // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
+
+                // example input: getSmallerSegment("Codeup", 3)
+                // example output: "cod"
+
+            // function getSmallerSegment(string, number) {
+            //     return string.toLowerCase().substring(0, number);
+            // }
+            //
+            // console.log(getSmallerSegment("Codeup", 3)); // "cod"
+            // console.log(getSmallerSegment("hEllo", 2)); // "he"
+
+
+    // ===== SCOPE
+
+            // var keyword creates "Function Scope" variables
+
+                // var globalVar = "Look, I'm Global";
+                //
+                // function scopeExample() {
+                //     var localVar = "Look, I'm local";
+                //     alert(localVar);
+                //     alert(globalVar);
+                // }
+                //
+                // console.log(localVar);
+                //
+                // console.log(scopeExample());
+
+
+            // alert(localVar); // localVar is NOT accessible here and this will produce an error
+
+
+        // EXTRA SCOPE EXAMPLE
+
+            // var x = 300;
+            // var y = 100;
+            //
+            // function scopeExample2() {
+            //     x = 1;
+            //     y = 2;
+            //     console.log('2nd x: ' + x + ' y: ' + y);
+            //     return x + y;
+            // }
+            //
+            // console.log('1st x: ' + x + ' y: ' + y);
+            // console.log(scopeExample2());
+
+
+        // ===== SIDE EFFECTS VS. PURE FUNCTIONS
+
+            // function with side effects
+
+            // var word = "hello";
+            //
+            // function shoutWord() {
+            //     word = input.toUpperCase();
+            // }
+            //
+            //
+            // function shoutWord(input) {
+            //     return input.toUpperCase();
+            // }
+            //
+            //
+            // console.log(shoutWord(word));
+
+
+            // pure function
+
+
+
+            // function with side effects
+
+
+            // pure function
+
+
+
+    // =====  CALLBACK, ANONYMOUS, HIGHER ORDER FUNCTIONS
+
+        // addTwo is a "Higher Order Function" because it takes in other functions as arguments
+            // functions that return a function are also "Higher Order Functions"
+
+        // function returnFive() { // callback function
+        //     return 5;
+        // }
+        //
+        // function addTwo(number) { // higher order function
+        //     return number() + 2;
+        // }
+        //
+        // console.log(addTwo(returnFive));
+        //
+        // console.log(addTwo(function() {
+        //     return 3;
+        // }));
+
+
+        // Callback function "returnFive" is passed to addTwo
+
+        // Anon function passed to addTwo()
+
+        // other common higher order functions built in to JS: //
+    // setInterval,
+    // setTimeout, map, filter, reduce, fetch
+
+
+    // =====  IIFE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //  =====  RECURSION and RETURNING A FUNCTION AS AN OUTPUT
+
+    // returned as a value from another function
+
+        // function happy() {
+        //     console.log("I'm happy!");
+        // }
+        //
+        // function notHappy() {
+        //     console.log("I'm NOT happy!");
+        // }
+        //
+        // function chooseMessage(mood) {
+        //     var result;
+        //
+        //     if (mood === "happy") {
+        //         result = happy;
+        //     } else {
+        //         result = notHappy;
+        //     }
+        //
+        //     return result;
+        // }
+        //
+        // var sayMessage = chooseMessage("sad");
+        //
+        // sayMessage();
+
+
+    // recursion
+
+        // function songThatNeverEnds() {
+        //     console.log("...this is the song that never ends "
+        //         + "and it goes on an my friend. "
+        //         + "Some people, started singing it not knowing what it was, "
+        //         + "and they'll continue singing it forever just because...");
+        //     songThatNeverEnds();
+        // }
+        //
+        // songThatNeverEnds();
+
+    })();
+
+
+</script>
+</body>
+</html>
