@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Conditionals</title>
+</head>
+<body>
+<script>
+  "use strict";
+
+//  Switch example
+  var a = 4;
+  var b = 6;
+  var c = 10;
+  var solution;
+  var mathStuff = prompt("What would you like to do?");
+
+  function mathThings(x, y) {
+      switch (mathStuff) {
+          case "add":
+              solution = x + y;
+              break;
+          case "subtract":
+              solution = x - y;
+              break;
+          case "multiply":
+              solution = x * y;
+              break;
+          case "divide":
+              solution = x / y;
+              break;
+      }
+
+  }
+
+  function add(dog,cat,mouse){
+      return dog + cat + mouse;
+  }
+  function multiply(x,y){
+      return x * y;
+  }
+
+  console.log(add(9,8,7));
+  console.log(add(a,17,c));
+  console.log(multiply(a,b));
+
+  alert(mathThings(a,b));
+
+
+//If - Else If
+//   var question = prompt("What have you learned?");
+//   var greeting = prompt("How are you?");
+//   confirm("Exit now?");
+//   var answer;
+
+  // switch(question) {
+  //     case "html":
+  //         answer = "Hyper Text Markup Language";
+  //         console.log(answer);
+  //         break;
+  //     case "css":
+  //         answer = "Cascading Style Sheets";
+  //         break;
+  //     case "js":
+  //         answer = "JavaScript";
+  //         break;
+  //     default:
+  //         answer = "Not a language";
+  //         break;
+  // }
+  // alert(answer);
+function checkLanguage(lang) {
+    if (lang === "html") {
+        answer = "Hyper Text Markup Language";
+    } else if (lang === "css") {
+        answer = "Cascading Style Sheets";
+    } else if (lang === "js") {
+        answer = "JavaScript";
+    } else {
+        answer = "What is " + question + "?";
+    }
+    alert(answer);
+}
+
+checkLanguage(question);
+checkLanguage(greeting);
+
+
+
+
+
+</script>
+</body>
+</html>
