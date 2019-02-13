@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loops</title>
+</head>
+<body>
+<script src="js/while.js"></script>
+<!--<script src="js/for_loops.js"></script>-->
+<!--<script src="js/break_and_continue.js"></script>-->
+<script>
+  "use strict";
+//  question 2
+  var x = 2;
+  while(x <= 65536){
+      console.log(x);
+      x += x;
+  }
+//  ice cream
+
+//  times table
+  function showMultiplicationTable(x){
+      var b;
+      for(var i = 1; i <= 10; i++){
+          b = x * i;
+          console.log(x + " x " + i + " = " + b);
+      }
+  }
+
+  showMultiplicationTable(7);
+  showMultiplicationTable(8);
+//  10 random numbers
+  for(var i = 1; i <= 10; i++){
+      var randomNumber = Math.floor(Math.random() * 180)+20;
+      if(randomNumber % 2 === 0){
+          console.log(randomNumber + " is even.");
+      }else{
+          console.log(randomNumber + " is odd.");
+      }
+  }
+//  half triangle
+  for(var r = 1; r < 10; r++){
+      var print = "";
+      for(var j = 1; j <= r; j++){
+          print += r;
+      }
+      console.log(print);
+  }
+//  decrease by 5
+for(var y = 100; y >= 5; y -= 5){
+    console.log(y);
+}
+
+var input;
+
+while(true){
+    input = prompt("Please enter an odd number from 1 - 50");
+    if(isNaN(input)){
+        alert("That is not a number. Please try again");
+        continue;
+    }
+    if(input < 1 || input > 50){
+        alert("Number is out of range. Please try again");
+        continue;
+    }
+    if(input % 2 === 0){
+        alert("Please enter an odd number.");
+    } else{
+        break;
+    }
+}
+console.log(input);
+
+for(var w = 1; w <= 50; w++){
+    if(w % 2 === 0){
+        continue;
+    }
+    if(w == input){
+        console.log("Yikes! Skipping number: " + w);
+    }else{
+        console.log("Here is an odd number: " + w);
+    }
+}
+
+//  prompt user for input.
+//  isNaN
+//  out of range
+//  even number
+</script>
+</body>
+</html>
