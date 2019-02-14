@@ -1,9 +1,9 @@
 "use strict";
   //logs even numbers from 2 - 65536
-  let x = 2;
-  while(x <= 65536){
-      console.log(x);
-      x += x;
+  let a = 2;
+  while(a <= 65536){
+      console.log(a);
+      a += a;
   }
 
   //ice cream cones
