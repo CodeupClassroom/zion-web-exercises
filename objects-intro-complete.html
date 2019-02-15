@@ -170,10 +170,10 @@
 
     // Copying Object Property Values
 
-        var petCopy = Object.create(pet4);
+        var petCopy = Object.assign({}, pet4);
         petCopy.name = "Fred";
-        console.log(pet4.name);
-        console.log(petCopy.name);
+        console.log(JSON.stringify(pet4));
+        console.log(JSON.stringify(petCopy));
 
 
     // Comparing Objects
@@ -205,23 +205,23 @@
 
     // why use this vs. the object name: https://stackoverflow.com/questions/12799702/javascript-this-versus-object-name
 
-        function getUserObject() {
-            var user = {};
-            user.name = prompt("What is your name?");
-            user.age = prompt("How old are you?");
-            user.checkIfMinor = function (ageOfAdult) {
-                return this.age >= ageOfAdult;
-            };
-            return user;
-        }
-
-        var loggedInUser = getUserObject();
-
-        alert("Hi, " + loggedInUser.name + "!");
-
-        var message = loggedInUser.checkIfMinor(18) ? "You are an adult" : "You are a minor";
-
-        alert(message);
+        // function getUserObject() {
+        //     var user = {};
+        //     user.name = prompt("What is your name?");
+        //     user.age = prompt("How old are you?");
+        //     user.checkIfMinor = function (ageOfAdult) {
+        //         return this.age >= ageOfAdult;
+        //     };
+        //     return user;
+        // }
+        //
+        // var loggedInUser = getUserObject();
+        //
+        // alert("Hi, " + loggedInUser.name + "!");
+        //
+        // var message = loggedInUser.checkIfMinor(18) ? "You are an adult" : "You are a minor";
+        //
+        // alert(message);
 
 
     // this (other cases)
