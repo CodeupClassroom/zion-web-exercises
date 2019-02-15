@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects Intro</title>
+</head>
+<body>
+
+    <h1>Intro to Objects</h1>
+
+<script>
+    "use strict";
+
+    // Object Defined
+
+        // Like a named index array
+        // Often used to store related state and behavior
+        // Where arrays are good for storing lists of data, objects store related aspects of a greater structure
+        // We have already used objects: String, Array, Math, Number
+
+
+    // Custom Objects (dog, user, forecast, dictionaryEntry, movie, post, etc.)
+
+
+        // New Object Instance
+
+            var dog = new Object();
+
+            console.log(typeof dog);
+
+
+        // Object Literal Notation
+
+            var cat = {};
+
+            console.log(typeof cat);
+
+    // Setting Properties on a Custom Object
+
+        // create a pet object that has the following properties...
+            // name
+            // age
+            // species
+            // hasOffspring
+            // valueInDollars
+
+        var pet = {};
+
+        pet.name = "Sparkles";
+        pet.age = 12;
+        pet.species = "turtle";
+        pet.hasOffspring = true;
+        pet['value-in-dollars'] = 400;
+
+        console.log(pet);
+
+
+        var pet2 = {
+            name: "Lexie",
+            age: 5,
+            species: "dog",
+            hasOffspring: false,
+            valueInDollars: 'priceless'
+        };
+
+
+    // Peeking into an Object
+
+        console.log(pet);
+
+
+    // Accessing Properties on an Object
+
+        console.log(pet.name);
+        console.log(pet2.name);
+        console.log(pet2['name']);
+
+        pet.name = "Sabrina";
+
+
+
+    // Removing Properties
+
+        console.log(pet2.name);
+        delete pet2.name;
+        console.log(pet2.name);
+
+
+    // Nested Values
+
+        // Add the following to a pet object...
+            // altNames
+            // vitals: averageTemp, restingHeartRate, isHungry
+
+        var pet3 = {
+            name: "Bowser",
+            age: 6,
+            species: "dog",
+            hasOffspring: false,
+            valueInDollars: 'priceless',
+            altNames: [
+                'Bowser Boy',
+                'Bowser Man',
+                'Bowser Buddy',
+                'Puggle Wuggle Boy'
+            ],
+            vitals: {
+                averageTempDegF: 101,
+                restingHeartRate: 80,
+                isHungry: true
+            }
+        };
+
+        // log if Bowser is hungry
+        // log Bowser's average heartRate
+        // log Bowser's most recent alternative name
+        // change age to 7 and isHungry to false
+
+    // MINI EXERCISE 1
+
+    // Arrays of Objects... (users)
+
+
+        var users = [
+            {
+                name: "Sam",
+                age: 21
+            },
+            {
+                name: "Cathy",
+                age: 34
+            },
+            {
+                name: "Karen",
+                age: 43
+            }
+        ];
+
+
+    // MINI EXERCISE 2
+
+
+    // Assigning Functionality to an Object
+
+        var pet4 = {
+            name: "Pickles",
+            age: 20,
+            species: "horse",
+            eat: function (food) {
+                console.log("nom nom nom " + food);
+            },
+            gallop: function() {
+                console.log("THUNK THUMP...THUNK THUMP!");
+            }
+        };
+
+        pet4.eat("carrots");
+        pet4.gallop("carrots");
+
+
+    // MINI EXERCISE 3
+
+
+    // Copying an Object Reference
+
+        var somePet = pet4;
+        somePet.age = 1;
+        console.log(pet4.age);
+
+
+    // Copying Object Property Values
+
+        var petCopy = Object.create(pet4);
+        petCopy.name = "Fred";
+        console.log(pet4.name);
+        console.log(petCopy.name);
+
+
+    // Comparing Objects
+
+        console.log(pet4 === petCopy);
+        console.log(pet4 === somePet);
+
+
+    // Getting a List of Object Keys as an array
+
+        console.log(Object.keys(pet4));
+
+
+    // The this Keyword
+
+        var pet6 = {
+            name: "Sparky",
+            age: 3,
+            getOlder: function() {
+                console.log(this.age);
+                this.age += 1;
+            }
+        };
+
+        console.log(pet6.age);
+        pet6.getOlder();
+        console.log(pet6.age);
+
+
+    // why use this vs. the object name: https://stackoverflow.com/questions/12799702/javascript-this-versus-object-name
+
+        function getUserObject() {
+            var user = {};
+            user.name = prompt("What is your name?");
+            user.age = prompt("How old are you?");
+            user.checkIfMinor = function (ageOfAdult) {
+                return this.age >= ageOfAdult;
+            };
+            return user;
+        }
+
+        var loggedInUser = getUserObject();
+
+        alert("Hi, " + loggedInUser.name + "!");
+
+        var message = loggedInUser.checkIfMinor(18) ? "You are an adult" : "You are a minor";
+
+        alert(message);
+
+
+    // this (other cases)
+
+        // =================== Example 1 - using this in the global scope
+
+            // console.log(this); // global Window object in the browser
+
+
+        // =================== Example 2 - using this inside a function
+
+            // function thisTest() {
+            //     console.log(this);
+            // }
+            //
+            // thisTest(); // undefined
+
+
+        // =================== Example 3 - using this inside a method of an anonymous function
+
+            // var test = {
+            //     name: "Billy Bob"
+            // };
+            //
+            // test.someFunction = function() {
+            //     console.log(this);
+            // };
+            //
+            // test.someFunction(); // refers to the calling object
+
+
+        // =================== Example 4 - using this inside a method assigned a callback function
+
+            // var test2 = {
+            //     price: 45
+            // };
+            //
+            // function someCallback() {
+            //     console.log(this);
+            // }
+            //
+            // test2.thisTest = someCallback;
+            //
+            // test2.thisTest(); // calling object
+
+
+
+        // =================== Example 5 - using this inside async called method
+
+            // use the commented out code to create the correct reference to the calling object of the callback instead of the window object
+            // function logThis() {
+            //     // var that = this;
+            //     setTimeout(function() {
+            //         console.log(this);
+            //         // console.log(that);
+            //     }, 1000);
+            // }
+            //
+            // var someObject = {name: "bob"};
+            //
+            // someObject.asyncTest = logThis;
+            //
+            // someObject.asyncTest(); // refer to global window object
+
+
+
+        // =================== Example 6 - using the bind method to create the correct reference to the calling object of this in the anonymous function
+
+            // function logThis() {
+            //     setTimeout(function() {
+            //         console.log(this);
+            //     }.bind(this), 1000); // bind the calling object to the annon function passed to setTimeout
+            // }
+            //
+            // var someObject = {name: "bob"};
+            //
+            // someObject.asyncTest = logThis;
+            //
+            // someObject.asyncTest(); // now refers to the calling object
+
+
+
+
+</script>
+
+</body>
+</html>
