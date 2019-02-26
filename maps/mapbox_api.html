@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercise</title>
+
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+
+    <div id='map' style='width: 800px; height: 800px;'></div>
+
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="../js/keys.js"></script>
+    <script src="../js/mapbox-geocoder-utils.js"></script>
+
+    <script>
+
+        var token = mapboxToken; // pulled in from keys.js
+        var searchPlace = 'San Antonio';
+
+        mapboxgl.accessToken = token;
+
+        geocode(searchPlace, token).then(function(results) {
+
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v9',
+                zoom: 10,
+                center: results
+            });
+
+            var eats = [
+                {
+                    name: 'Silo',
+                    address: 'Silo: Elevated Cuisine, San Antonio, TX',
+                    message: 'It\'s great!'
+                },
+                {
+                    name: 'Chama Gaucha Steakhouse',
+                    address: 'Chama Gaucha Steakhouse, San Antonio, TX',
+                    message: 'Too good!'
+                },
+                {
+                    name: 'Tarka Indian Kitchen',
+                    address: 'Tarka Indian Kitchen, San Antonio, TX',
+                    message: 'Awesome!'
+                }
+            ];
+
+
+            function placeMarkerAndPopup(eatObj, token, map) {
+                return geocode(eatObj.address, token).then(function(coordinates) {
+                    var popup = new mapboxgl.Popup()
+                        .setHTML('<h3>' + eatObj.name + '</h3><p>' + eatObj.message + '</p>');
+                    return marker = new mapboxgl.Marker()
+                        .setLngLat(coordinates)
+                        .addTo(map)
+                        .setPopup(popup);
+                });
+            }
+
+            for (var i = 0; i < eats.length; i += 1) {
+                placeMarkerAndPopup(eats[i], token, map);
+            }
+
+            // eats.forEach(function(eat) {
+            //     placeMarkerAndPopup(eat, token, map);
+            // });
+
+
+        });
+
+    </script>
+
+</body>
+</html>
