@@ -1,21 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>jQuery</title>
+    <title>jQuery Selectors Exercise</title>
 </head>
 <body>
-    <h1>jQuery</h1>
 
-    <script src="js/jquery-3.3.1.js"></script>
+<h1 id="header">jQuery Test Page</h1>
+<div id="testDiv">This is a div</div>
+<p class="para">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
 
-    <script>
+<p class="para">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<p class="para" id="codeup" style="font-size: 5em">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+
+<ul id="unordered">
+    <li class="codeup">I love JS</li>
+    <li class="codeup">I love Python</li>
+    <li class="codeup">I love jQuery</li>
+</ul>
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function() {
+
         "use strict";
 
-            $(document).ready(function () {
-                alert(" the DOM has finished loading");
-            })
+        // ================== ID SELECTORS
 
-    </script>
+        // Use jQuery to select an element by the id. Alert the contents of the element.
+        //    alert($('#unordered').text());
+
+
+        // ================== CLASS SELECTORS
+
+        // Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
+
+        $('.codeup').css('border', '1px solid red');
+
+
+        // ================== ELEMENT SELECTORS
+
+        // Using jQuery, set the font-size of all li elements to 20px.
+
+        $('li').css('font-size', '20px');
+
+
+        // Craft selectors that highlight all the h1, p, and li elements.
+        //
+        // $('h1').css('background', 'yellow');
+        // $('p').css('background', 'yellow');
+        // $('li').css('background', 'yellow');
+
+        // Create a jQuery statement to alert the contents of your h1 element(s).
+
+        // ================== MULTIPLE SELECTORS
+
+        // $('h1, p, li')
+        //     .css()
+        //     .css('color', 'white');
+
+        $('#codeup').css('font-size', '.2em');
+
+
+
+    });
+
+
+</script>
 </body>
 </html>
