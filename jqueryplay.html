@@ -1,30 +1,71 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>jQuery Fun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style >
+        .highlighted {
+            background-color: yellow;
+        }
+        .underlined {
+            text-decoration: underline;
+        }
+        .gold {
+            color: gold;
+        }
+    </style>
 </head>
+
+
 <body>
+<div class="container">
+    <div class='jumbotron'>
+        <h1>Fun with jQuery!</h1>
+    </div>
 
+    <section>
+        <ul>
+            <!--<h2>Animals</h2>-->
+            <li id="cats" class="underlined">
+                <h3>Cats</h3>
+                <ul>
+                    <li>Tabby</li>
+                    <li class="gold">Lion</li>
+                    <li>Ocelot</li>
+                    <li id="jaguar">Jaguar</li>
+                </ul>
+            </li>
+            <li id="whales">
+                <h3>Whales</h3>
+                <ul>
+                    <li>Humpback</li>
+                    <li class="gold">Blue Whale</li>
+                    <li>Gray Whale</li>
+                    <li>Spermaceti</li>
+                    <li>Right Whale</li>
+                </ul>
+            </li>
+            <li id="snakes" class="underlined, gold">
+                <h3>Snakes</h3>
+                <ol>
+                    <li class="gold">King Cobra</li>
+                    <li>Coral</li>
+                    <li>Rattler</li>
+                    <li>Grass Snake</li>
+                </ol>
+            </li>
 
+        </ul>
+    </section>
+    <footer>
 
-    <h2>Here is a list of things</h2>
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li id="hello">hello</li>
-    </ul>
+    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="js/jqueryplay.js"></script>
-
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/jqueryplay.js"></script>
 </body>
 </html>
