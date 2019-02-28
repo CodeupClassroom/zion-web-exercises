@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Keyboard Events Lecture</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style>
+        body {
+            min-height: 2000px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<main class="container">
+
+    <h1 id="someHeader">Keyboard Events Lecture</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquid blanditiis delectus enim est itaque molestiae necessitatibus pariatur quo, rerum sunt tempore temporibus unde ut vel. Eaque necessitatibus quos temporibus.</p>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+
+    $(document).ready(function() {
+
+        "use strict";
+
+        // key events fired in the following order: keydown->keypress->keyup
+
+        // keydown
+
+            // recognizes all keyboard keys when they are pushed down
+            // repeats as key is held down
+
+            // $(document).keydown(function() {
+            //     console.log("Key down");
+            // });
+
+
+        // keypress
+
+            // recognizes the character that is typed
+            // only recognizes keys that can have a typed output
+
+            // $(document).keypress(function() {
+            //     console.log("Key press");
+            // });
+
+
+        // keyup
+
+            // recognizes all keyboard keys when they are pushed down
+            // recognizes all keyboard keys when they are released
+            // will fire only once per key push
+
+            // $(document).keyup(function() {
+            //     console.log("Key up");
+            // });
+
+
+        // on
+
+        // https://www.pdiniz.com/why-you-should-always-use-jquerys-onclick-instead-of-click/
+            // recognizes vanilla JS events, NOT jQuery event names
+            // dynamically added elements will also listen for .on() events
+
+            // $('h1').click(function() {
+            //     console.log('h1 clicked');
+            // });
+
+            // $(document).on("keydown", function() {
+            //     console.log('key down event');
+            // });
+
+            // $(document).on("keydown", function(e) {
+            //     console.log(e.key);
+            // });
+
+
+        // off
+
+            // removes all events from a selector or a specific event/selector/handler
+
+            // $(document).off("keydown");
+
+
+        // preventDefault()
+
+            // $(document).keydown(function(e) {
+            //     if (e.originalEvent.code === "Space") {
+            //         e.preventDefault();
+            //     }
+            // });
+
+
+        // konami code!
+
+            // http://digg.com/
+
+    });
+
+</script>
+
+</body>
+
+</html>
