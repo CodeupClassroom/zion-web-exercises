@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Konami Code!</title>
+</head>
+<body>
+
+    <h1>Enter the Konami Code for a secret!</h1>
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script>
+    (function() {
+
+        "use strict";
+
+        var konami = {
+            sequence: [
+                'ArrowUp',
+                'ArrowUp',
+                'ArrowDown',
+                'ArrowDown',
+                'ArrowLeft',
+                'ArrowRight',
+                'ArrowLeft',
+                'ArrowRight',
+                'b',
+                'a',
+                'Enter'
+            ],
+            index: 0
+        };
+
+        $(document).keydown(function(e) {
+            konami.sequence[konami.index] === e.key ? konami.index += 1 : konami.index = 0;
+            if (konami.index === konami.sequence.length) {
+                alert("YOU HAVE 30 LIVES!");
+                konami.index = 0;
+            }
+        });
+
+    })();
+</script>
+</body>
+</html>
