@@ -25,7 +25,7 @@
     proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
-<p class="para" id="codeup" style="font-size: 5em">
+<p class="para" id="codeup">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
     quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -49,43 +49,28 @@
 
         "use strict";
 
-        // ================== ID SELECTORS
+        // Add jQuery code that will change the background color of a h1 element when clicked.
 
-        // Use jQuery to select an element by the id. Alert the contents of the element.
-        //    alert($('#unordered').text());
-
-
-        // ================== CLASS SELECTORS
-
-        // Using jQuery, create a border around all elements with the class codeup that is 1 pixel wide and red.
-
-        $('.codeup').css('border', '1px solid red');
+        $('h1').click(function() {
+            $('h1').css('background', 'green');
+        });
 
 
-        // ================== ELEMENT SELECTORS
-
-        // Using jQuery, set the font-size of all li elements to 20px.
-
-        $('li').css('font-size', '20px');
-
-
-        // Craft selectors that highlight all the h1, p, and li elements.
         //
-        // $('h1').css('background', 'yellow');
-        // $('p').css('background', 'yellow');
-        // $('li').css('background', 'yellow');
+        // Make all paragraphs have a font size of 18px when they are double clicked.
 
-        // Create a jQuery statement to alert the contents of your h1 element(s).
-
-        // ================== MULTIPLE SELECTORS
-
-        // $('h1, p, li')
-        //     .css()
-        //     .css('color', 'white');
-
-        $('#codeup').css('font-size', '.2em');
+        $('p').dblclick(function(e) {
+            $(e.target).css('font-size', '18px');
+        });
 
 
+        // Set all li text color to red when the mouse is hovering, reset to black when it is not.
+
+        $('li').hover(function() {
+            $(this).css('color', 'red');
+        }, function() {
+            $(this).css('color', 'black');
+        });
 
     });
 
