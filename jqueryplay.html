@@ -1,13 +1,13 @@
-
 <html lang="en">
 <head>
-    <title>jQuery Fun</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <style >
+    <!-- The above 3 meta tags must come first in the head; any other head content must come after these tags -->
+    <title>jQuery Play</title>
+    <style type="text/css">
         .highlighted {
-            background-color: yellow;
+            background-color: palegreen;
         }
         .underlined {
             text-decoration: underline;
@@ -15,57 +15,73 @@
         .gold {
             color: gold;
         }
+        .jumbotron {text-align: center;}
+        .hidden {
+            visibility: hidden;
+            /*display:none;*/
+        }
     </style>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
-
-
 <body>
-<div class="container">
-    <div class='jumbotron'>
-        <h1>Fun with jQuery!</h1>
+<main class="container">
+    <div class="jumbotron">
+        <h1 id="mainTitle">jQuery is Fun!</h1>
+        <button id="btn1" type="button" class="btn btn-default">#btn1</button>
+        <button id="btn2" type="button" class="btn btn-default">#btn2</button>
+        <button id="btn3" type="button" class="btn btn-default">#btn3</button>
+        <button id="btn4" type="button" class="btn btn-default">#btn4</button>
     </div>
+    <section class="col-xs-3">
+        <div id="panel1" class="panel panel-primary">
+            <div class="panel-heading">
+                #panel1
+            </div>
+            <div class="panel-body"> Content1
+            </div>
 
-    <section>
-        <ul>
-            <!--<h2>Animals</h2>-->
-            <li id="cats" class="underlined">
-                <h3>Cats</h3>
-                <ul>
-                    <li>Tabby</li>
-                    <li class="gold">Lion</li>
-                    <li>Ocelot</li>
-                    <li id="jaguar">Jaguar</li>
-                </ul>
-            </li>
-            <li id="whales">
-                <h3>Whales</h3>
-                <ul>
-                    <li>Humpback</li>
-                    <li class="gold">Blue Whale</li>
-                    <li>Gray Whale</li>
-                    <li>Spermaceti</li>
-                    <li>Right Whale</li>
-                </ul>
-            </li>
-            <li id="snakes" class="underlined, gold">
-                <h3>Snakes</h3>
-                <ol>
-                    <li class="gold">King Cobra</li>
-                    <li>Coral</li>
-                    <li>Rattler</li>
-                    <li>Grass Snake</li>
-                </ol>
-            </li>
-
-        </ul>
+        </div>
     </section>
-    <footer>
+    <section class="col-xs-3">
+        <div id="panel2" class="panel panel-primary">
+            <div class="panel-heading">
+                #panel2
+            </div>
+            <div class="panel-body"> Content2
+            </div>
 
-    </footer>
+        </div>
+    </section>
+    <section class="col-xs-3">
+        <div id="panel3" class="panel panel-primary">
+            <div class="panel-heading">
+                #panel3
+            </div>
+            <div class="panel-body"> Content3
+            </div>
 
-</div>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="js/jqueryplay.js"></script>
+        </div>
+    </section>
+    <section class="col-xs-3">
+        <div id="panel4" class="panel panel-primary">
+            <div class="panel-heading underlined">
+                #panel4
+            </div>
+            <div class="panel-body"> Content4
+            </div>
+
+        </div>
+    </section>
+</main>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/jqueryplay.js">
+    </script>
+
 </body>
-</html>
+</html>﻿
