@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traversal Methods</title>
+</head>
+<body>
+
+    <header>
+        <h1>jQuery Traversal Methods</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Sub Articles</h2>
+            <article>
+                <h3>Sub Heading 1</h3>
+                <p>first para</p>
+            </article>
+            <article>
+                <h3>Sub Heading 2</h3>
+                <p>second para</p>
+            </article>
+            <article>
+                <h3>Sub Heading 3</h3>
+                <p>third para</p>
+            </article>
+        </section>
+        <section>
+            <h2 id="cool-title">Other Articles</h2>
+            <article>
+                <h3>Other Heading 1</h3>
+                <p>fourth para</p>
+            </article>
+            <article>
+                <h3>Other Heading 2</h3>
+                <p>fifth para</p>
+            </article>
+            <article>
+                <h3>Other Heading 3</h3>
+                <p>sixth para</p>
+            </article>
+        </section>
+        <hr>
+        <section>
+            <h3>Item List</h3>
+            <ol>
+                <li>Dog</li>
+                <li>Cat</li>
+                <li>Bread</li>
+                <li>Bowl</li>
+                <li>Car</li>
+                <li>Boat</li>
+                <li>Plane</li>
+                <li>Burger</li>
+            </ol>
+        </section>
+    </main>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script>
+
+        $(function() {
+            "use strict";
+
+            // $.each()
+
+                // $.each(['cat', 'dog', 'fish'], function(i, e) {
+                //     console.log(e);
+                // });
+
+                // $.each({name: "fred", age: 23}, function(key, value) {
+                //     console.log(key + " " + value);
+                // });
+
+
+            // $(selector).each()
+
+                // $('p').each(function(index, element) {
+                //     console.log(index);
+                //     console.log(element);
+                // });
+
+                //implicit iteration
+
+                // $('p').css('color', 'lime');
+
+                // console.log($('p').text());
+
+
+                // $('p').text('bob');
+
+                // only change the fourth para to 'bob'
+                // $('p').each(function(index, element) {
+                //     if (index === 3) {
+                //         $(element).text('bob');
+                //     }
+                // });
+
+
+
+
+                // create a monochromatic transition for the background color
+
+            // $('li').each(function(index, element) {
+            //     // make the text purple for all list items that start with the letter b
+            //     if ($(element).text()[0].toLowerCase() === 'b') {
+            //         $(element).css('color', 'purple');
+            //     }
+            //
+            //     $(element).css('background', '#' + ('' + index).repeat(3));
+            //
+            // });
+
+            // $('body').css('background', '#ecc');
+
+            // .first()
+
+            // $('article').first().css('color', 'lime');
+
+
+            // .last()
+
+            // $('article').last().css('color', 'lime');
+
+            // .children()
+
+
+    // $('main').children().first().children().last().children().each(function(index, element) {
+    //     console.log(element);
+    // });
+
+            // $('main > section:first-child > h2').each(function(index, element) {
+            //     console.log(element);
+            // });
+
+            // console.log($('main').children());
+
+
+            // .parent()
+
+            // $('#cool-title').parent().css('background', 'firebrick');
+
+            // $('#cool-title').parents().css('background', 'firebrick');
+
+
+            // .next() / .prev()
+            console.log($('ol').children().first().next().prev().text());
+
+
+            // explore eq()
+
+            console.log($('ol').children().eq(3).text());
+
+        })
+
+    </script>
+
+</body>
+</html>
