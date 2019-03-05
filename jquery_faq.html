@@ -26,7 +26,8 @@
 
 <main class="container">
 
-
+    <div id="register"><h1>Would you like to sign up for our newsletter?</h1>  <span id="closeRegister">x</span></div>
+    <h2 id="register2">Pretty please register for the site.</h2>
 
     <h1>Top Ten Questions about Glacier National Park</h1>
 
@@ -119,6 +120,9 @@
 
         "use strict";
 
+        $('#register2').hide().delay(8000).fadeIn(1000);
+        $('h3').next().hide();
+
         // ============================================== For Attributes and CSS Lesson
 
         $('#toggleAnswersBtn').click(function(e) {
@@ -152,7 +156,14 @@
             console.log($(this).parent().children().first().css('color', 'blue'));
         });
 
+        $('#closeRegister').click(function() {
+            $('#register').hide();
+            // $(this).parent().parent().hide();
+        });
 
+        $('h3').click(function() {
+            $(this).next().slideToggle();
+        });
 
     });
 
