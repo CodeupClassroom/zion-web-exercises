@@ -2,35 +2,156 @@
 <html>
 <head>
     <title>Online Store</title>
+    <link rel="stylesheet" href="css/themes/slate.bootstrap.min.css">
+    <style>
+        main {
+            min-height: 800px;
+        }
+    </style>
 </head>
-<body>
+<body class="text-light">
 
-<h1>My Tool Store</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<table id="products">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Categories</th>
-    </tr>
-    </thead>
-    <tbody id="insertProducts"></tbody>
-</table>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+    <header class="container mt-4">
+        <h1 class="text-center jumbotron display-3">My Tool Store</h1>
+    </header>
+
+    <main class="container bg-primary">
+
+        <h3 class="pt-4 mb-2">Items</h3>
+
+        <table id="products" class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Categories</th>
+                </tr>
+            </thead>
+            <tbody id="insertProducts">
+                <tr class="table-secondary">
+                    <td>Screwdriver</td>
+                    <td>500</td>
+                    <td>10</td>
+                    <td>awesome, useful, metal</td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>Screwdriver</td>
+                    <td>500</td>
+                    <td>10</td>
+                    <td>awesome, useful, metal</td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>Screwdriver</td>
+                    <td>500</td>
+                    <td>10</td>
+                    <td>awesome, useful, metal</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <button class="btn btn-success" id="update-btn">Update Items</button>
+
+    </main>
+
+<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script>
-    (function() {
+    $(function() {
         "use strict";
-        // TODO: Create an ajax GET request for /data/inventory.json
+        // TODO: Create an ajax GET request for data/inventory.json
+        var jqXhr = $.get('data/inventory.json');
+
 
         // TODO: Take the data from inventory.json and append it to the products table
         //       HINT: Your data should come back as a JSON object; use console.log() to inspect
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
-    })();
+
+
+        // FUNCTION TO GENERATE LIST ITEM HTML
+        function buildCats(cats) {
+            var html = '<ul>';
+            for (var i = 0; i < cats.length; i += 1) {
+                html += "<li>" + cats[i] + "</li>";
+            }
+            html += '</ul>';
+            return html;
+        }
+
+        function buildTableHtml(items) {
+            var html = '';
+
+            // FOR LOOP VERSION WITH CATS IN SEPARATE LI TAGS
+            // for (var i = 0; i < items.length; i += 1) {
+            //     html += '<tr class="table-secondary">';
+            //     html += '<td>' + items[i].title + '</td>';
+            //     html += '<td>' + items[i].quantity + '</td>';
+            //     html += '<td>' + items[i].price + '</td>';
+            //     html += '<td><ul><li>' + items[i].categories.join('</li><li>') + '</li></ul></td>';
+            //     html += '</tr>';
+            // }
+
+            items.forEach(function(item) {
+                html += '<tr class="table-secondary">';
+                html += '<td>' + item.title + '</td>';
+                html += '<td>' + item.quantity + '</td>';
+                html += '<td>' + item.price + '</td>';
+                html += '<td>' + item.categories.join(', ') + '</td>';
+                html += '</tr>';
+            });
+
+            return html;
+        }
+
+        jqXhr.done(function(items) {
+            $('#insertProducts').html(buildTableHtml(items));
+        });
+
+        $('#update-btn').click(function() {
+            jqXhr = $.get('data/inventory.json');
+            jqXhr.done(function(items) {
+                $('#insertProducts').html(buildTableHtml(items));
+            });
+        });
+
+    });
 </script>
 
 </body>
