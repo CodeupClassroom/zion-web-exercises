@@ -48,13 +48,31 @@ const wait = (milliseconds) => {
 // wait(1000)
 // wait(3000)
 
+let headers = {'Authorization': `token ${GITHUB_TOKEN}`};
 
-fetch('https://api.github.com/users/danielfryar')
-    .then((data) => {
-        console.log(data);
-        return data.json();
-    })
-    .then((jsonData) => {
-        console.log(jsonData.login)
-    })
+const getLastPush = (username) => {
+    return fetch(`https://api.github.com/users/${username}/events`, {headers: headers})
+        .then((data) => {
+            // console.log(data);
+            return data.json();
+        })
+        .then((data) => {
+            // console.log(data);
+            return data.filter((event) => {
+                return event.type === "PushEvent";
+            })
+        })
+        .then((data) => {
+            // console.log(data);
+            return data[0].created_at;
+        })
+
+
+}
+getLastPush('danielfryar').then((timestamp) => console.log(timestamp));
+        // return fetch(data.events_url, {headers: headers});
+    // })
+    // .then((data) => {
+    //     console.log(data);
+    // })
     // .catch(error => console.error(error));
